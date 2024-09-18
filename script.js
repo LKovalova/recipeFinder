@@ -219,3 +219,39 @@ document.addEventListener("DOMContentLoaded", async function () {
     }
   }
 });
+
+function displayRecipeDetail(recipe) {
+  const recipeName = document.getElementById("recipeName");
+  const recipeImage = document.getElementById("recipeImage");
+  const healthInfo = document.getElementById("healthInfo");
+  const ingredientsList = document.getElementById("ingredientsList");
+  const instructions = document.getElementById("instructions");
+
+  if (
+    recipeName &&
+    recipeImage &&
+    healthInfo &&
+    ingredientsList &&
+    instructions
+  ) {
+    recipeName.textContent = recipe.title;
+    recipeImage.src = recipe.image;
+    recipeImage.alt = recipe.title;
+    healthInfo.innerHTML = `
+            <p><strong>Health Information:</strong> ${recipe.diets.join(", ")}${
+      recipe.glutenFree ? ", Gluten-Free" : ""
+    }${recipe.vegan ? ", Vegan" : ""}</p>
+        `;
+
+    ingredientsList.innerHTML = "";
+    recipe.extendedIngredients.forEach((ingredient) => {
+      const listItem = document.createElement("li");
+      listItem.className = "list-group-item";
+      listItem.textContent = `${ingredient.name} - ${ingredient.amount} ${ingredient.unit}`;
+      ingredientsList.appendChild(listItem);
+    });
+
+    instructions.innerHTML =
+      recipe.instructions || "No instructions available.";
+  }
+}

@@ -1,4 +1,4 @@
-const apiKey = "8e59cb0304f748f28b2ae4ede7694c43";
+const apiKey = "cd740a7d200d48499c5bdb0a5e94b196";
 
 const cuisines = [
   "African",
@@ -128,7 +128,7 @@ function displayResults(recipes, totalResults) {
           <img src="${recipe.image}" class="card-img-top" alt="${recipe.title}">
           <div class="card-body">
               <h5 class="card-title">${recipe.title}</h5>
-              <a href="recipe.html?id=${recipe.id}" class="btn btn-primary">View Details</a>
+              <a href="recipe.html?id=${recipe.id}" class="btnSearch">View Details</a>
           </div>
       `;
     resultsContainer.appendChild(card);

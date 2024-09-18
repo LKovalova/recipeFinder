@@ -9,10 +9,32 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Amaranth:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container-fluid justify-content-center">
+        <a class="navbar-brand" href="index.html">
+          <img src="assets/logo.png" alt="Logo" width="100" height="100" />
+        </a>
+      </div>
+    </nav>
     <div class="container">
-      <h1 class="mt-4">Recipe Finder</h1>
+      <header class="mt-4">
+        <h1 class="text-center">Recipe Finder</h1>
+        <p class="mt-2 text-center">
+          <i>
+            Search for recipes by name or ingredient, and select a cuisine to
+            filter your results.
+          </i>
+        </p>
+      </header>
+
       <div class="form-group">
         <input
           type="text"
@@ -20,20 +42,26 @@
           class="form-control"
           placeholder="Search for recipes..."
         />
-        <button id="searchButton" class="btn btn-primary mt-2">Search</button>
-        <button id="resetButton" class="btn btn-secondary mt-2 ms-2">
-          Reset
-        </button>
+        <div class="button-group mt-3 text-center">
+          <button id="searchButton" class="btnSearch">Search</button>
+          <button id="resetButton" class="btnReset">Reset</button>
+        </div>
       </div>
+
       <div class="form-group mt-3">
         <select id="cuisineSelect" class="form-select">
           <option value="">All Cuisines</option>
         </select>
       </div>
+
       <div id="results" class="mt-3"></div>
       <div id="pagination" class="mt-3"></div>
       <div id="paginationPage" style="display: none">1</div>
     </div>
+
+    <footer class="mt-4">
+      <p>&copy; 2024 Liubov Kovalova</p>
+    </footer>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>

@@ -1,0 +1,146 @@
+html, body {
+    height: 100%; 
+    margin: 0; 
+}
+
+body {
+    font-family: 'Amaranth', sans-serif;
+    display: flex; 
+    flex-direction: column; 
+    color: #594a47;
+    background-color: #EAE1D6;
+}
+
+.amaranth-regular {
+    font-family: "Amaranth", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+
+.navbar-brand img {
+    filter: drop-shadow(0 0 5px rgba(89, 74, 71, 0.5)); 
+}
+
+.navbar-nav {
+    flex-direction: row; 
+    justify-content: center; 
+}
+
+.container {
+    flex: 1 0 auto; 
+    max-width: 800px;
+    margin: 20px auto; 
+    padding: 1% 10%;
+    background-color: rgba(255, 255, 255, 0.8); 
+    border-radius: 8px; 
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+}
+
+footer {
+    text-align: center; 
+    padding: 10px 0; 
+    background-color: rgba(255, 255, 255, 0.8); 
+    color: #594a47; 
+
+}
+
+.list-group-item {
+    background-color: #ffffff; 
+    border: 1px solid #D3D3D3; 
+}
+
+.list-group-item:hover {
+    background-color: #F8F8F8; 
+}
+
+.card {
+    margin-bottom: 20px;
+    border: 1px solid #D3D3D3; 
+    border-radius: 8px; 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+}
+
+.card-img-top {
+    height: 280px;
+    object-fit: cover; 
+}
+
+.card-title{
+    color: #594a47;
+}
+
+.recipe-card {
+    border: 1px solid #eae1d6; 
+    border-radius: 8px; 
+    overflow: hidden;
+}
+
+#pagination button {
+    margin: 0 2px;
+    padding: 5px 10px;
+    border-radius: 4px;
+    background-color: #B7C9A8;; 
+    color: #fff; 
+    border: none; 
+}
+
+#pagination .active {
+    background-color: #828d76; 
+    color: white;
+    border-color: #828d76; 
+}
+
+#pagination .btn-secondary {
+    margin: 0 5px;
+    background-color: #e9d6ea; 
+    color: #594a47;
+}
+
+#pagination .btn-secondary:hover {
+    background-color: #b39ab4; 
+    color: #594a47;
+}
+
+.btnSearch {
+    background-color: #B7C9A8; 
+    border-color: #7EAA92;
+    color: #594a47;
+    width: 30%;
+    margin: 1%;
+    padding: 1%;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-decoration: none;
+}
+
+.btnSearch:hover {
+    background-color: #7EAA92; 
+}
+
+.btnReset {
+    background-color: #e9d6ea; 
+    border-color: #b39ab4;
+    color: #594a47;
+    width: 30%;
+    margin: 1%;
+    padding: 1%;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.btnReset:hover {
+    background-color: #b39ab4; 
+}
+
+.button-group {
+    display: flex; 
+    justify-content: center; 
+}
+
+.button-group button {
+    margin: 0 10px; 
+}
+
+.img-fluid{
+    border-radius: 8px;
+}

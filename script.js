@@ -40,3 +40,26 @@ function populateCuisineSelect() {
     cuisineSelect.appendChild(option);
   });
 }
+
+document.addEventListener("DOMContentLoaded", function () {
+  const searchButton = document.getElementById("searchButton");
+  const searchInput = document.getElementById("searchInput");
+  const cuisineSelect = document.getElementById("cuisineSelect");
+  const resetButton = document.getElementById("resetButton");
+
+  populateCuisineSelect();
+
+  if (searchButton && searchInput && cuisineSelect) {
+    searchButton.addEventListener("click", searchRecipes);
+
+    searchInput.addEventListener("keypress", function (event) {
+      if (event.key === "Enter") {
+        searchRecipes();
+      }
+    });
+
+    cuisineSelect.addEventListener("change", searchRecipes);
+
+    resetButton.addEventListener("click", resetFilters);
+  }
+});

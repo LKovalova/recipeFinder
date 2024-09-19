@@ -276,3 +276,37 @@ function displayRecipeDetail(recipe) {
       recipe.instructions || "No instructions available.";
   }
 }
+
+gsap.from(".container", {
+  duration: 1.5,
+  delay: 0.5,
+  y: 50,
+  ease: "power3.out",
+  opacity: 0,
+});
+
+gsap.from("header", {
+  duration: 1,
+  delay: 1,
+  y: -30,
+  ease: "power3.out",
+  opacity: 0,
+});
+
+gsap.from(".form-group", {
+  duration: 0.8,
+  delay: 1.5,
+  y: 30,
+  ease: "power3.out",
+  opacity: 0,
+  stagger: 0.2,
+});
+
+gsap.from(".button-group button", {
+  duration: 0.8,
+  delay: 1.8,
+  y: 30,
+  ease: "power3.out",
+  opacity: 0,
+  stagger: 0.1,
+});

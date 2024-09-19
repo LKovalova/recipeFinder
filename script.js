@@ -30,6 +30,9 @@ const cuisines = [
   "Vietnamese",
 ];
 
+/**
+ * Populates the cuisine select dropdown with options from the cuisines array.
+ */
 function populateCuisineSelect() {
   const cuisineSelect = document.getElementById("cuisineSelect");
   if (!cuisineSelect) return;
@@ -65,6 +68,10 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 
+/**
+ * Searches for recipes based on the input query and selected cuisine.
+ * Fetches data from the Spoonacular API and displays the results.
+ */
 async function searchRecipes() {
   const searchInput = document.getElementById("searchInput");
   const cuisineSelect = document.getElementById("cuisineSelect");
@@ -100,6 +107,10 @@ async function searchRecipes() {
   }
 }
 
+/**
+ * Resets the search filters to their default values.
+ * Clears the search input, resets the cuisine selection, and displays the first page of results.
+ */
 function resetFilters() {
   document.getElementById("searchInput").value = "";
   document.getElementById("cuisineSelect").value = "";
@@ -107,6 +118,13 @@ function resetFilters() {
   searchRecipes();
 }
 
+/**
+ * Displays the search results on the page.
+ * Creates recipe cards and handles pagination display.
+ *
+ * @param {Array} recipes - Array of recipe objects to display.
+ * @param {number} totalResults - Total number of results available.
+ */
 function displayResults(recipes, totalResults) {
   const resultsContainer = document.getElementById("results");
   const paginationContainer = document.getElementById("pagination");
@@ -137,6 +155,12 @@ function displayResults(recipes, totalResults) {
   setupPagination(totalResults);
 }
 
+/**
+ * Sets up pagination for the search results.
+ * Creates buttons for navigating between pages.
+ *
+ * @param {number} totalResults - Total number of results available.
+ */
 function setupPagination(totalResults) {
   const paginationContainer = document.getElementById("pagination");
   const pageElement = document.getElementById("paginationPage");
@@ -220,6 +244,11 @@ document.addEventListener("DOMContentLoaded", async function () {
   }
 });
 
+/**
+ * Displays detailed information for a specific recipe.
+ *
+ * @param {Object} recipe - The recipe object containing detailed information.
+ */
 function displayRecipeDetail(recipe) {
   const recipeName = document.getElementById("recipeName");
   const recipeImage = document.getElementById("recipeImage");
@@ -277,6 +306,7 @@ function displayRecipeDetail(recipe) {
   }
 }
 
+// GSAP animations for page elements
 gsap.from(".container", {
   duration: 1.5,
   delay: 0.5,

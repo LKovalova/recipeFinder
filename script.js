@@ -226,22 +226,43 @@ function displayRecipeDetail(recipe) {
   const healthInfo = document.getElementById("healthInfo");
   const ingredientsList = document.getElementById("ingredientsList");
   const instructions = document.getElementById("instructions");
+  const servingsInfo = document.getElementById("servingsInfo");
+  const readyInInfo = document.getElementById("readyInInfo");
 
   if (
     recipeName &&
     recipeImage &&
     healthInfo &&
     ingredientsList &&
-    instructions
+    instructions &&
+    servingsInfo
   ) {
     recipeName.textContent = recipe.title;
     recipeImage.src = recipe.image;
     recipeImage.alt = recipe.title;
-    healthInfo.innerHTML = `
-            <p><strong>Health Information:</strong> ${recipe.diets.join(", ")}${
-      recipe.glutenFree ? ", Gluten-Free" : ""
-    }${recipe.vegan ? ", Vegan" : ""}</p>
-        `;
+
+    const healthInfoItems = new Set();
+
+    recipe.diets.forEach((diet) => {
+      const formattedDiet = diet.toLowerCase();
+      healthInfoItems.add(formattedDiet);
+    });
+
+    if (recipe.glutenFree) healthInfoItems.add("gluten free");
+    if (recipe.vegan) healthInfoItems.add("vegan");
+    if (recipe.vegetarian) healthInfoItems.add("vegetarian");
+    if (recipe.dairyFree) healthInfoItems.add("dairy free");
+    if (recipe.nutFree) healthInfoItems.add("nut free");
+
+    const healthInfoString = Array.from(healthInfoItems).join(", ");
+
+    readyInInfo.innerHTML = `<p><strong>Ready in:</strong> ${recipe.readyInMinutes} minutes</p>`;
+
+    healthInfo.innerHTML = `<p><strong>Health Information:</strong> ${
+      healthInfoString || "No specific health information."
+    }</p>`;
+
+    servingsInfo.innerHTML = `<p><strong>Servings:</strong> ${recipe.servings}</p>`;
 
     ingredientsList.innerHTML = "";
     recipe.extendedIngredients.forEach((ingredient) => {
